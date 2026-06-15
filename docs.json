@@ -1,8 +1,8 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "almond",
-  "name": "Product Guide",
-  "description": "Step-by-step guides for every product—platform setup, analytics, and integrations in one place.",
+  "name": "Crewly",
+  "description": "Crewly is a next-generation staff & operations management platform built specifically for Ro-Aviation groups. It aims to replace spreadsheets, messy logs, and fragmented bots with one unified, modular system designed to scale from small airlines to full enterprise-level operations.",
   "colors": {
     "primary": "#22C55E",
     "light": "#22C55E",
