@@ -30,9 +30,9 @@
           "href": "/"
         },
         {
-          "anchor": "Changelog",
-          "icon": "scroll-text",
-          "href": "https://www.mintlify.com/docs/changelog"
+          "anchor": "Dashboard",
+          "icon": "layout-dashboard",
+          "href": "https://dash.crewlyrblx.app"
         },
         {
           "anchor": "Help",
@@ -43,6 +43,16 @@
     },
     "directory": "card",
     "groups": [
+      {
+        "group": "Get Started",
+        "icon": "rocket",
+        "expanded": true,
+        "pages": [
+          "introduction",
+          "quickstart",
+          "connecting-your-group"
+        ]
+      },
       {
         "group": "Platform",
         "icon": "layers",
@@ -80,7 +90,7 @@
     ]
   },
   "logo": {
-    "light": "/images/CREWLYlight.svg",
+    "light": "/images/CREWLYlight.png",
     "dark": "/images/crewlybanner.png"
   },
   "navbar": {

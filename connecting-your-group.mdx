@@ -1,0 +1,59 @@
+---
+title: "Connecting your Roblox group"
+description: "How Crewly syncs with your Roblox group"
+---
+
+Crewly connects directly to your Roblox group and keeps members in sync automatically.
+
+## How sync works
+
+Crewly syncs your group by **role**, not by member. Instead of fetching all 400,000 members in a large group, it fetches only the members who have roles you've mapped to Crewly ranks.
+
+This means:
+
+- Sync is fast even for very large groups
+- Members with unmapped roles are never imported
+- Guests, alumni, and other non-staff roles stay out of Crewly automatically
+
+## Sync frequency
+
+Crewly syncs your group automatically every 15 minutes. You can also trigger a manual sync anytime from **Settings → General → Sync Now**.
+
+## What sync does
+
+When sync runs, Crewly:
+
+1. Fetches members for each mapped Roblox role
+2. Creates new memberships for members not yet in Crewly
+3. Updates existing members' ranks if their Roblox role changed
+4. Marks members as inactive if they left the group
+
+<Warning>
+  Sync never overwrites a member's status if they are Suspended or Terminated. Discipline actions are preserved across syncs.
+</Warning>
+
+## Member limit
+
+Free plan organisations are limited to 50 members. If your group has more members in mapped roles, sync will stop at 50 and new members won't be added until you upgrade.
+
+## Finding your Group ID
+
+Your Roblox Group ID is in the URL when viewing your group: roblox.com/groups/\[GROUP\_ID\]/group-name
+
+## Large groups
+
+If your group has hundreds of thousands of members, sync may not complete in a single run. Crewly will sync as many members as possible within the time limit and continue on the next run. Members are never lost — subsequent syncs pick up where the previous one left off.
+
+## Troubleshooting
+
+**Members aren't appearing after sync**
+
+Check that their Roblox role is mapped in **Settings → Role Mapping**. Only members with mapped roles are imported.
+
+**A member's rank didn't update**
+
+Sync updates ranks automatically. If a member's rank looks wrong, trigger a manual sync from Settings → General.
+
+**Sync shows 0 members**
+
+This usually means the role mapping is empty or the role IDs don't match. Go to **Settings → Role Mapping** and verify your mappings are saved correctly.
