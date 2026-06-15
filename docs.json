@@ -104,5 +104,12 @@
   },
   "background": {
     "decoration": "gradient"
-  }
+  },
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "/introduction",
+      "permanent": false
+    }
+  ]
 }
