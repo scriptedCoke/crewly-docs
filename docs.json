@@ -25,11 +25,6 @@
     "global": {
       "anchors": [
         {
-          "anchor": "Home",
-          "icon": "house",
-          "href": "/"
-        },
-        {
           "anchor": "Dashboard",
           "icon": "layout-dashboard",
           "href": "https://dash.crewlyrblx.app"
