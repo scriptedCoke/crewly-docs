@@ -47,6 +47,16 @@
           "quickstart",
           "connecting-your-group"
         ]
+      },
+      {
+        "group": "Core",
+        "icon": "layers",
+        "pages": [
+          "members",
+          "ranks-and-permissions",
+          "audit-log",
+          "invite-codes"
+        ]
       }
     ]
   },

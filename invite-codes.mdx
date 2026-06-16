@@ -1,0 +1,47 @@
+---
+title: "Invite Codes"
+description: "How to add members manually using invite codes"
+---
+
+Invite codes let you add members to your Crewly organisation manually, outside of the automatic group sync.
+
+## When to use invite codes
+
+Group sync handles most members automatically. Use invite codes when:
+
+- A staff member has a different Roblox account than their group membership
+- You want to add someone before they join the Roblox group
+- A member's role isn't mapped but they still need Crewly access
+- You're testing Crewly with a specific person
+
+## Creating an invite code
+
+Go to **Settings → Invite Codes**. Click **Create Invite Code**.
+
+Each code has:
+
+- **Uses** — how many times it can be redeemed. Set to 1 for a personal invite, higher for a shared link.
+- **Expiry** — optional. Set an expiry date if you want the code to stop working after a certain time.
+- **Rank** — the rank the member will be assigned when they redeem the code.
+
+<Warning>
+  Members who join via invite code are assigned the rank you select at creation time. Sync will update their rank to match their Roblox role on the next sync run, which may change it.
+</Warning>
+
+## Sharing an invite code
+
+After creating a code, share the invite link with the member. They go to `dash.crewlyrblx.app/onboarding/join`, enter the code, and they're added to your organisation.
+
+The member must sign in with their Roblox account first. Crewly links the invite to their Roblox identity.
+
+## Revoking a code
+
+From **Settings → Invite Codes**, click the delete icon on any code to revoke it immediately. Existing members who already redeemed it are not affected — only future redemptions are blocked.
+
+## Member limit
+
+Invite code redemption respects the member limit on your plan. If your organisation is at the 50-member limit on the Free plan, new members cannot redeem invite codes until you upgrade or remove inactive members.
+
+## Permissions
+
+Creating and revoking invite codes requires the **Invite codes** admin permission.

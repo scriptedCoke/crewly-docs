@@ -1,0 +1,124 @@
+---
+title: "Ranks & Permissions"
+description: "How ranks and the permission system work in Crewly"
+---
+
+Ranks are the foundation of how Crewly controls access. Every member has a rank, and every rank has a set of permissions that determine what that member can see and do.
+
+## How ranks work
+
+Ranks map directly to your Roblox group roles. When you set up Crewly, you map each Roblox role to a Crewly rank. When sync runs, members are assigned the Crewly rank that corresponds to their Roblox role.
+
+Each rank has:
+
+- A **name** and **colour** — shown throughout the UI as a badge
+- A **level** — determines hierarchy. Higher level = higher rank. Must be unique per org.
+- A set of **permissions** — controls what members at this rank can do
+
+## The Owner rank
+
+Every organisation has one Owner rank. It is permanent and cannot be deleted, modified, or bypassed. The Owner rank has all permissions enabled.
+
+<Warning>
+  The Owner rank is sacred. No action in Crewly — including direct database changes via the Supabase dashboard — should modify or remove it. Doing so may make your organisation inaccessible.
+</Warning>
+
+## Permissions
+
+There are 22 permissions across 7 categories. Each permission is either on or off for a rank.
+
+### Operations
+
+| Permission | What it allows |
+| --- | --- |
+| View flights | See the flight schedule and dispatch board |
+| Request to join | Request to join scheduled flights |
+| Host flights | Schedule and open flights |
+| Manage all flights | Manage flights hosted by others |
+
+### Attendance
+
+| Permission | What it allows |
+| --- | --- |
+| View own attendance | See personal flight history |
+| View org attendance | See all members' attendance |
+| Log attendance | Open and close attendance sessions |
+
+### Discipline
+
+| Permission | What it allows |
+| --- | --- |
+| View cases | Access the discipline module |
+| Issue strikes | Open strike cases against members |
+| Issue suspensions | Suspend members |
+| Issue terminations | Permanently remove members |
+| Revoke cases | Revoke active suspensions and strikes |
+
+### Members
+
+| Permission | What it allows |
+| --- | --- |
+| View members | Access the members list and profiles |
+| Manage members | Change member status and details |
+| Promote & demote | Change member ranks |
+
+### Leave
+
+| Permission | What it allows |
+| --- | --- |
+| Submit leave | Submit LOA requests |
+| Approve leave | Approve or deny leave requests |
+
+### Quota
+
+| Permission | What it allows |
+| --- | --- |
+| View own quota | See personal quota progress |
+| View org quota | See all members' quota |
+
+### Admin
+
+| Permission | What it allows |
+| --- | --- |
+| Manage plugins | Enable and configure plugins |
+| Org settings | Edit organisation name, URL, and sync |
+| Role mapping | Map Roblox roles to Crewly ranks |
+| Invite codes | Create and revoke invite codes |
+
+## Permission presets
+
+When creating ranks during onboarding or later in Settings → Manage Ranks, you can apply a preset to quickly configure permissions:
+
+| Preset | Designed for |
+| --- | --- |
+| **Owner** | Full access to everything |
+| **Management** | All permissions except org deletion |
+| **HR Staff** | Discipline, members, and leave management |
+| **Senior Staff** | Host flights, view attendance, issue strikes |
+| **Staff** | Host flights and view own stats |
+| **Member** | View and request to join flights |
+| **No access** | Cannot access Crewly |
+
+Presets are a starting point — you can customise individual permissions after applying one.
+
+## Managing ranks
+
+Go to **Settings → Manage Ranks** (under the Rank nav item) to:
+
+- Create new ranks
+- Edit rank names, colours, and levels
+- Configure permissions per rank
+- View member distribution across ranks
+- See which permissions each rank has enabled
+
+<Tip>
+  The rank hierarchy visualiser on the Manage Ranks page shows your ranks ordered from highest to lowest level with member counts per rank. Click any rank to expand its full permission breakdown.
+</Tip>
+
+## Rank plugin
+
+The core rank system handles direct rank assignments. If you need formal promotion workflows — eligibility requirements, promotion requests, trial periods, and approval queues — enable the **Rank plugin**.
+
+<Card title="Rank plugin" icon="trending-up" href="/plugins/rank">
+  Learn about promotion workflows and eligibility requirements
+</Card>

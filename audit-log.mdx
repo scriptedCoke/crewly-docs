@@ -1,0 +1,60 @@
+---
+title: "Audit Log"
+description: "How the audit log works and what it tracks"
+---
+
+The audit log is a permanent record of every significant action taken in your Crewly organisation. It tells you who did what, when, and to whom.
+
+## What gets logged
+
+Every action that changes data in Crewly is logged, including:
+
+- Member status changes
+- Rank changes and promotions
+- Discipline cases opened, modified, or revoked
+- Leave requests submitted, approved, and denied
+- Flight scheduling, status changes, and cancellations
+- Attendance sessions opened and closed
+- Quota period creation and rollover
+- Plugin settings changes
+- Org settings changes
+- Invite code creation and redemption
+- Role mapping changes
+- Sync events
+
+## Reading the audit log
+
+The audit log is at **Audit Log** in the sidebar. Each entry shows:
+
+- **Action** — what happened, in plain English
+- **Member** — who performed the action
+- **Target** — who or what was affected
+- **Time** — when it happened, with relative and absolute timestamps
+
+You can filter by member, action type, and date range.
+
+## History limits by plan
+
+| Plan | History |
+| --- | --- |
+| **Free** | Last 7 days |
+| **Pro** | Unlimited |
+| **Enterprise** | Unlimited |
+
+<Note>
+  Free plan audit logs are automatically filtered to the last 7 days. Older entries exist in the database but are not shown. Upgrade to Pro to access full history.
+</Note>
+
+## Who can see the audit log
+
+Members with the **Org settings** admin permission can access the full audit log. The audit log page is not visible to regular members.
+
+Members can see their own activity in their Account page under the Activity tab — this shows their own actions across all organisations they belong to.
+
+## Audit log in member profiles
+
+Every member profile shows a condensed activity feed on the Overview tab. This shows recent actions that involved that member — discipline issued, rank changes, leave approved, and so on. This is visible to members with the **View members** permission.
+
+## Data retention
+
+Audit log entries are never automatically deleted. The 7-day limit on Free plan is a display filter only — the data is retained. If you upgrade to Pro, your full history becomes visible immediately.

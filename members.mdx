@@ -1,0 +1,61 @@
+---
+title: "Members"
+description: "How member profiles and status work in Crewly"
+---
+
+Members are the people in your Crewly organisation. Every member has a profile that tracks their rank, status, attendance history, leave, discipline record, and quota progress.
+
+## How members are added
+
+Members are added to Crewly in two ways:
+
+**Group sync** — the primary method. When Crewly syncs with your Roblox group, anyone with a mapped role is automatically imported. Members don't need to do anything — they just sign in with their Roblox account and their profile is waiting for them.
+
+**Invite codes** — for members who need manual access. Admins generate an invite code from Settings → Invite Codes and share it. The member redeems it on the join page.
+
+<Note>
+  Members with unmapped Roblox roles are never imported. If a member isn't appearing, check that their role is mapped in Settings → Role Mapping.
+</Note>
+
+## Member status
+
+Every member has one of five statuses:
+
+| Status | Description |
+| --- | --- |
+| **Active** | Normal access. Can use Crewly based on their rank permissions. |
+| **LOA** | On leave of absence. Quota is paused. Set automatically when leave is approved. |
+| **Inactive** | Left the Roblox group. No access. Set automatically by sync. |
+| **Suspended** | Suspended by HR. Cannot access Crewly. Set by a discipline action. |
+| **Terminated** | Permanently removed. No access. Set by a discipline action. |
+
+<Warning>
+  Sync never overwrites Suspended or Terminated status. Discipline actions are always preserved across syncs.
+</Warning>
+
+## Member profile
+
+Each member has a profile page accessible from the Members list. The profile shows:
+
+- **Overview** — rank, status, days at current rank, recent activity
+- **Attendance** — full session history with durations and flight types
+- **Quota** — progress for the current period and history across past periods
+- **Leave** — all leave requests and their outcomes
+- **Discipline** — case history including strikes, suspensions, and terminations
+- **Rank history** — every rank change with reasons and who authorised it
+
+<Tip>
+  Managers with the right permissions can promote, demote, issue discipline, and approve leave directly from the member profile page.
+</Tip>
+
+## Searching and filtering
+
+The Members list supports filtering by:
+
+- **Status** — Active, LOA, Inactive, Suspended, Terminated
+- **Rank** — filter to a specific rank or range
+- **Search** — by display name or Roblox username
+
+## Member limit
+
+Free plan organisations are limited to 50 active members. Members above this limit will not be imported during sync. Upgrade to Pro for unlimited members.
