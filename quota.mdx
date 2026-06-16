@@ -1,0 +1,100 @@
+---
+title: "Quota"
+description: "Automatic quota tracking and at-risk alerts"
+---
+
+The Quota plugin automatically tracks how many flights each member has completed in a given period. No manual entry — quota is calculated directly from attendance data.
+
+## What Quota adds
+
+- Automatic quota calculation based on attendance sessions
+- Quota periods with configurable targets and recurrence
+- At-risk alerts when members are behind with little time left
+- Per-member progress visible on the dashboard and quota page
+- Org-wide quota table for managers
+- LOA integration — quota pauses automatically when a member is on leave
+
+## How quota works
+
+Quota counts the number of attendance sessions a member has completed in the current quota period. Whether a session counts depends on the flight type — configured in **Settings → General → Flight Types**.
+
+A member meets quota when their completed session count reaches the period target.
+
+## Quota periods
+
+Quota runs in periods — a defined window of time with a target number of sessions.
+
+### Setting up recurrence
+
+Go to **Settings → Plugins → Quota** and configure recurrence. Set it once and Crewly handles everything automatically.
+
+Recurrence options:
+
+- **Weekly** — resets every Monday
+- **Biweekly** — resets every second Monday
+- **Monthly** — resets on the 1st of each month
+- **Custom** — every X days
+
+When a period ends, Crewly automatically creates the next one and activates it. No admin action needed.
+
+<Note>
+  Period names are auto-generated based on the recurrence type — "June 2025" for monthly, "Week of 2 Jun 2025" for weekly. You can set a custom name format in settings.
+</Note>
+
+## Member view
+
+Members with the **View own quota** permission see a personal quota dashboard showing:
+
+- Progress ring and session count for the current period
+- Days remaining and sessions still needed
+- At-risk or warning banner if behind
+- Recent sessions that counted toward quota
+- Period history across past periods
+
+## Manager view
+
+Members with the **View org quota** permission see the org-wide quota table showing every member's progress, status, and sessions completed.
+
+The table can be filtered by status and sorted by progress, name, or risk level.
+
+## Status levels
+
+| Status | Meaning |
+| --- | --- |
+| **Complete** | Met or exceeded the target |
+| **On Track** | Above the warning threshold |
+| **Behind** | Below the warning threshold |
+| **At Risk** | Below the at-risk threshold with less than 7 days left |
+| **LOA Exempt** | On approved leave — quota is paused |
+
+## At-risk alerts
+
+When a member is at risk — below the at-risk threshold with fewer than 7 days remaining — they see a red alert banner on their quota page and dashboard. Managers see an at-risk panel with a list of members who need attention.
+
+Members who are at risk also receive an email notification if quota email notifications are enabled in their account settings.
+
+## LOA integration
+
+When a member's leave is approved, their quota is automatically paused for the duration. They show as **LOA Exempt** in the org table and their progress is frozen until they return.
+
+Whether quota pauses on LOA is controlled in **Settings → Plugins → Quota**.
+
+## Settings
+
+Go to **Settings → Plugins → Quota** to configure:
+
+- **Recurrence type** — Weekly, Biweekly, Monthly, or Custom
+- **Default target sessions** — how many sessions per period
+- **Warning threshold** — percentage below which members show as Behind
+- **At-risk threshold** — percentage below which members show as At Risk (with \< 7 days left)
+- **Pause quota on LOA** — whether approved leave pauses quota
+- **Show quota to members** — whether members can see their own progress
+- **Show org quota to members** — whether members can see the org-wide table
+
+## Permissions required
+
+| Action | Permission needed |
+| --- | --- |
+| View own quota | View own quota |
+| View org quota table | View org quota |
+| Configure quota settings | Manage plugins |

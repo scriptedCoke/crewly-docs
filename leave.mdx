@@ -1,0 +1,98 @@
+---
+title: "Leave"
+description: "LOA request and approval workflow"
+---
+
+The Leave plugin provides a formal leave of absence workflow. Members submit requests, managers approve or deny them, and member status is managed automatically throughout.
+
+## What Leave adds
+
+- LOA request submission with start date, end date, and reason
+- Manager approval and denial workflow
+- Automatic status change to LOA when approved
+- Auto-restore to Active when leave ends
+- Leave calendar showing the whole org at a glance
+- Quota pause integration
+
+## Submitting a leave request
+
+Members with the **Submit leave** permission can submit a request from the Leave page. Click **Request Leave** and fill in:
+
+- **Leave period** — start and end dates
+- **Reason** — minimum character requirement set by your admin
+
+While filling in dates, Crewly shows:
+
+- How many other members are on leave during that period
+- Whether the concurrent leave limit would be reached
+- A preview of what the approved leave will look like
+
+<Note>
+  If auto-approval is enabled in your org's settings, your request is approved immediately and your status changes to LOA right away.
+</Note>
+
+## Approval workflow
+
+Managers with the **Approve leave** permission see pending requests in the Leave page under **All Requests**. Pending requests appear as action cards at the top with Approve and Deny buttons.
+
+**Approving** a request:
+
+- Sets the member's status to LOA immediately
+- Pauses their quota if configured
+- Sends the member an email notification
+
+**Denying** a request:
+
+- Keeps the member's status as Active
+- Optional denial reason sent to the member
+
+## When leave ends
+
+When the leave end date passes, Crewly automatically restores the member's status to Active. This runs on the background sync.
+
+A grace period can be configured in settings — for example, restore 6 hours after leave ends rather than immediately.
+
+Managers can also end leave early from the member's leave request or from the All Requests table.
+
+## Leave calendar
+
+The Calendar tab on the Leave page shows all approved and pending leave across the org in a monthly grid. Each day shows who is on leave, colour-coded by their rank colour.
+
+Useful for checking coverage before approving new requests.
+
+## My Leave tab
+
+Members see their own leave history under the **My Leave** tab — all past requests, their status, who reviewed them, and any review notes.
+
+If currently on LOA, a banner shows the leave end date and a progress bar through the leave period.
+
+## Concurrent leave limits
+
+Admins can set a maximum number of members allowed on LOA at the same time. If the limit is reached, new requests are still submitted but members see a warning that the limit has been reached.
+
+## Quota integration
+
+When a member's leave is approved, their quota is paused automatically if **Pause quota on LOA** is enabled in Quota settings. They show as LOA Exempt in the quota table and their progress is frozen until they return to Active.
+
+## Settings
+
+Go to **Settings → Plugins → Leave** to configure:
+
+- **Minimum reason length** — characters required in the reason field
+- **Advance notice required** — how many days ahead a request must be submitted
+- **Maximum leave duration** — longest a single request can be
+- **Maximum concurrent LOA** — how many members can be on LOA at once
+- **Require approval** — whether requests need manager approval or auto-approve
+- **Auto-approve after** — auto-approve if no action taken after X days
+- **Allow self-approval** — whether managers can approve their own requests
+- **Auto-restore on expiry** — automatically restore status when leave ends
+- **Grace period** — hours after leave end before auto-restore runs
+
+## Permissions required
+
+| Action | Permission needed |
+| --- | --- |
+| Submit a leave request | Submit leave |
+| Approve or deny requests | Approve leave |
+| View all requests | Approve leave |
+| End leave early | Approve leave |

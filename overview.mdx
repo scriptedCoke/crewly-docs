@@ -1,0 +1,69 @@
+---
+title: "Overview"
+description: "How the Crewly plugin system works"
+---
+
+Crewly is built around a modular plugin system. Core is always on and handles the fundamentals. Everything else is a plugin you enable when your organisation needs it.
+
+## Why plugins
+
+Different aviation groups have different needs. A small group running casual flights doesn't need a formal discipline system. A large airline group with 500 staff needs quota tracking, leave management, and promotion workflows.
+
+Plugins let you start simple and add complexity as you grow — without paying for or navigating features you don't use.
+
+## Available plugins
+
+| Plugin | What it adds |
+| --- | --- |
+| [Operations](/plugins/operations) | Flight scheduling and dispatch management |
+| [Attendance](/plugins/attendance) | Crew manifest logging and session tracking |
+| [Quota](/plugins/quota) | Automatic quota tracking and at-risk alerts |
+| [Leave](/plugins/leave) | LOA request and approval workflow |
+| [Discipline](/plugins/discipline) | HR case management for strikes and suspensions |
+| [Rank](/plugins/rank) | Formal promotion and demotion workflows |
+| Boards | Kanban task management — coming soon |
+| Pay | Staff compensation tracking — coming soon |
+
+## Enabling plugins
+
+Go to **Settings → Plugins**. Toggle any plugin on or off. Changes take effect immediately.
+
+<Warning>
+  Some plugins depend on others. Disabling a plugin that another one depends on will also disable the dependent plugin. Crewly will warn you before this happens.
+</Warning>
+
+## Plugin dependencies
+
+| Plugin | Requires |
+| --- | --- |
+| Attendance | Core |
+| Quota | Core, Attendance |
+| Leave | Core |
+| Discipline | Core |
+| Rank | Core |
+| Operations | Core |
+
+## Plan limits
+
+| Plan | Plugin limit |
+| --- | --- |
+| **Free** | 3 plugins |
+| **Pro** | All plugins |
+| **Enterprise** | All plugins |
+
+Core does not count toward the plugin limit.
+
+## Configuring plugins
+
+Each plugin has its own settings page. Go to **Settings → Plugins** and click **Configure** on any enabled plugin to adjust its behaviour.
+
+Plugin settings control things like:
+
+- Whether members can submit their own requests
+- Minimum reason lengths
+- Auto-approval rules
+- Visibility settings
+
+## Disabling plugins
+
+You can disable a plugin at any time. Existing data is preserved — flights, sessions, cases, and requests are not deleted. If you re-enable the plugin, everything is still there.

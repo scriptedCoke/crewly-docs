@@ -1,0 +1,86 @@
+---
+title: "Attendance"
+description: "Crew manifest logging and session tracking"
+---
+
+The Attendance plugin logs who flew on each flight and for how long. Sessions can be linked to a scheduled flight or created standalone for events, training, or other activities.
+
+## What Attendance adds
+
+- Crew manifest logging per flight or session
+- Standalone sessions not linked to a scheduled flight
+- Personal flight history for every member
+- Session duration tracking per crew member
+- Quota integration — attendance entries count toward quota targets
+
+## Sessions
+
+An attendance session is an open or closed record of who participated in a flight or activity.
+
+Sessions have a **type** that matches your org's flight types — Line Flight, Training, Event, Charter, or any custom types you've defined.
+
+### Linked sessions
+
+When a flight is `SERVER OPEN` in Operations, a host with the **Log attendance** permission can open an attendance session linked to that flight. The session inherits the flight's type and route.
+
+### Standalone sessions
+
+If Operations is disabled, or for activities that don't have a scheduled flight, hosts can create a standalone session directly from the Attendance page.
+
+<Note>
+  Standalone sessions require a title if your org has enabled that setting in Settings → Plugins → Attendance.
+</Note>
+
+## Opening a session
+
+Go to **Attendance** and click **Open Session**, or open one from the flight detail page in Operations.
+
+When the session opens, the host is automatically added to the manifest as the first crew entry. Additional crew members are then added manually as they join the server.
+
+Each entry records:
+
+- Who was on the flight
+- When they joined the session
+- How long they were on
+
+## Closing a session
+
+Click **Close Session** when the flight ends. The session is marked complete and all durations are finalised. Closed sessions feed into quota calculations automatically.
+
+## Crew manifest
+
+The session detail page shows the full crew manifest — everyone who was logged, their rank, join time, and duration. Rank breakdown and a session timeline are also shown.
+
+## Member history
+
+Every member's profile shows their full attendance history on the Attendance tab — recent sessions, total hours, and a monthly activity chart.
+
+Members with the **View own attendance** permission can see their own history. Members with **View org attendance** can see everyone's.
+
+## Quota integration
+
+Attendance entries automatically count toward quota if the session's flight type has **Counts towards quota** enabled. This is configured per flight type in **Settings → General → Flight Types** — not in Attendance settings.
+
+<Tip>
+  If you want Training sessions to not count toward quota, go to Settings → General → Flight Types and toggle off "Counts towards quota" on the Training type.
+</Tip>
+
+## Settings
+
+Go to **Settings → Plugins → Attendance** to configure:
+
+- **Allow standalone sessions** — whether sessions can be created without a linked flight
+- **Require title on standalone** — force a title when creating standalone sessions
+- **Auto-close sessions** — automatically close open sessions after a set time
+- **Enforce max crew** — prevent adding crew beyond a session maximum
+- **Allow late entry** — whether crew can be added after the session has been open a while
+- **Show sessions to all members** — whether members can see sessions exist
+- **Show crew to members** — whether members can see who else is on the manifest
+
+## Permissions required
+
+| Action | Permission needed |
+| --- | --- |
+| View own history | View own attendance |
+| View all sessions | View org attendance |
+| Open and close sessions | Log attendance |

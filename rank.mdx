@@ -1,0 +1,144 @@
+---
+title: "Rank"
+description: "Formal promotion and demotion workflows"
+---
+
+The Rank plugin adds structured promotion and demotion workflows on top of the core rank system. Instead of managers directly changing ranks, the Rank plugin introduces eligibility requirements, formal requests, review queues, and trial periods.
+
+## What Rank adds
+
+- Eligibility requirements per rank — flights, quota periods, days at rank, no strikes
+- Promotion and demotion request submission
+- Manager review queue with approve and deny actions
+- Trial promotions with confirmation or revert
+- Full rank change history across the org
+- Pending promotion widgets on the dashboard
+
+## How it works alongside Core
+
+Core handles direct rank assignments — any admin with the **Promote & demote** permission can change a member's rank instantly at any time.
+
+The Rank plugin adds a formal layer on top:
+
+- Members can submit promotion requests
+- Requests are reviewed by managers
+- Eligibility requirements must be met (or bypassed by admins)
+- Approvals can include a trial period
+
+Both paths coexist. Admins can still directly promote members even when the Rank plugin is enabled.
+
+## Eligibility requirements
+
+Each rank can have requirements that must be met before a member can request promotion to it.
+
+Requirements are configured in **Rank → Requirements**:
+
+| Requirement | What it checks |
+| --- | --- |
+| Minimum flights | Total attendance entries |
+| Quota periods completed | Periods where the member met their quota target |
+| Days at current rank | How long they've held their current rank |
+| No active strikes | Zero active strikes on record |
+| No active suspensions | Not currently suspended |
+| Custom note | Free text shown to the member during eligibility check |
+
+If no requirements are set for a rank, promotion is open to anyone.
+
+<Note>
+  Requirements are checked when a member submits a request. Admins with the Promote & demote permission can bypass requirements if admin bypass is enabled in settings.
+</Note>
+
+## Submitting a request
+
+Members with the **Submit leave** permission (all members by default) can submit a promotion request from the Rank hub page. They see:
+
+- Their current rank
+- Their eligibility for the next rank up — a checklist of each requirement with current vs required values
+- A **Request Promotion** button if eligible (or if requirements are open)
+
+The request form asks for a reason. Minimum reason length is configurable.
+
+## Review queue
+
+Managers with the **Promote & demote** permission see pending requests in **Rank → Requests**. Each pending request shows:
+
+- The member and the requested rank change
+- The full eligibility checklist
+- A warning if requirements aren't met
+- Approve, Approve with Trial, and Deny actions
+
+### Approving
+
+Direct approval — member's rank changes immediately.
+
+### Approving with trial
+
+Sets the member's rank but marks them as **On Trial** until the trial end date. The manager must then confirm or revert the promotion before the trial ends.
+
+Trial status is visible on the member's profile and in the rank hub.
+
+### Denying
+
+Manager can add review notes explaining why. The member is notified by email.
+
+## Trial periods
+
+Trial promotions give managers time to evaluate a member at the new rank before confirming permanently.
+
+During a trial:
+
+- The member holds the new rank and has its permissions
+- A trial badge appears on their profile
+- Managers see the trial in the **Trials needing review** section
+- 3 days before expiry, managers receive an email reminder
+
+When the trial ends, the manager clicks **Confirm** to make it permanent or **Revert** to return the member to their previous rank.
+
+<Tip>
+  If Auto-confirm trials is enabled in settings, trials are automatically confirmed when the end date passes without manager action.
+</Tip>
+
+## Rank history
+
+**Rank → History** shows every rank change across the org — promotions, demotions, trials, confirmations, and reverts. Each entry shows who was changed, what changed, who authorised it, and when.
+
+Filterable by member, type, rank, and date range.
+
+## Rank hub
+
+The Rank hub page shows different content based on permissions:
+
+**For members:**
+
+- Current rank card with days at rank
+- Eligibility check for the next rank up
+- Their own request history
+
+**For managers:**
+
+- Stats bar — pending requests, approved this month, members on trial
+- Trials needing review
+- Pending requests preview
+
+## Settings
+
+Go to **Settings → Plugins → Rank** to configure:
+
+- **Allow member requests** — whether members can submit their own promotion requests
+- **Enforce requirements** — block requests if requirements aren't met
+- **Allow admin bypass** — admins can promote regardless of requirements
+- **Allow demotion requests** — members can request demotions
+- **Enable trial periods** — approvals can include a trial
+- **Default trial duration** — pre-fill the trial end date
+- **Auto-confirm trials** — automatically confirm when trial expires
+- **Minimum reason length** — characters required in the reason field
+- **Require notes on denial** — force review notes when denying
+
+## Permissions required
+
+| Action | Permission needed |
+| --- | --- |
+| Submit a promotion request | Available to all active members |
+| Review requests | Promote & demote |
+| Configure requirements | Role mapping |
+| View rank history | Promote & demote |

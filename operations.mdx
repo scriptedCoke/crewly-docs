@@ -1,0 +1,96 @@
+---
+title: "Operations"
+description: "Flight scheduling and dispatch management"
+---
+
+The Operations plugin is the flight management centre of Crewly. Captains schedule flights, crew request to join, and managers track status from the dispatch board.
+
+## What Operations adds
+
+- Flight scheduling with route, aircraft type, and departure time
+- Join request system for crew to request a spot on a flight
+- Status flow from scheduled through to completed
+- Dispatch board showing all active and upcoming flights
+- Flight numbers auto-generated per org (e.g. `CR-0042`)
+- Link to attendance sessions for crew manifest logging
+
+## Flight status flow
+
+SCHEDULED → SERVER OPEN → IN PROGRESS → COMPLETED ↓ CANCELLED
+
+| Status | Meaning |
+| --- | --- |
+| **Scheduled** | Flight is planned, not yet open |
+| **Server Open** | Roblox server is open, crew can join |
+| **In Progress** | Flight is underway |
+| **Completed** | Flight finished |
+| **Cancelled** | Flight cancelled at any stage |
+
+## Scheduling a flight
+
+Members with the **Host flights** permission can schedule a flight. Go to **Operations** and click **Schedule Flight**.
+
+Fill in:
+
+- **Flight type** — Line Flight, Training, Event, Charter, or any custom types your org has defined
+- **Route** — origin and destination (e.g. `YSSY → YMML`)
+- **Aircraft type** — the aircraft being flown
+- **Scheduled time** — when the flight is planned for
+- **Max crew** — optional cap on crew size
+
+Flight numbers are assigned automatically in sequence.
+
+## Opening a server
+
+When the Roblox server is ready, the host clicks **Open Server** on the flight detail page. This changes status to `SERVER OPEN` and allows crew to submit join requests.
+
+## Join requests
+
+Members with the **Request to join** permission can submit a join request on any `SERVER OPEN` flight. The host sees requests in the flight detail page and can approve or deny them.
+
+Approved members appear on the crew manifest. Denied members are notified.
+
+## Starting and completing
+
+When the flight departs, the host clicks **Start Flight** — status moves to `IN PROGRESS`. When the flight lands, **Complete** closes it out.
+
+## Dispatch board
+
+The Operations main page shows a dispatch board with all flights organised by status. Managers can see all active flights across the org at a glance.
+
+You can switch between:
+
+- **Board view** — cards grouped by status
+- **List view** — compact table with all flights
+
+## Flight types
+
+Flight types are configured in **Settings → General → Flight Types**. Each type has a name, colour, and a toggle for whether it counts toward quota.
+
+Default types are Line Flight, Training, Event, and Charter. You can add, edit, and reorder types to match how your group operates.
+
+<Note>
+  Flight types are shared between Operations and Attendance. If you disable Operations, Attendance can still use the same types for standalone sessions.
+</Note>
+
+## Linked attendance sessions
+
+When a flight moves to `SERVER OPEN`, a host can open an attendance session linked to that flight. The session tracks exactly who flew and for how long. See [Attendance](/plugins/attendance) for details.
+
+## Permissions required
+
+| Action | Permission needed |
+| --- | --- |
+| View flights | View flights |
+| Request to join | Request to join |
+| Schedule a flight | Host flights |
+| Manage others' flights | Manage all flights |
+
+## Settings
+
+Go to **Settings → Plugins → Operations** to configure:
+
+- **Flight number prefix** — default `CR`, customise per org (e.g. `SKY`, `ALT`)
+- **Flight number padding** — how many digits in the number (e.g. `0042` = 4 digits)
+- **Require reason on cancel** — force hosts to explain cancellations
+- **Allow join after server open** — whether crew can request after the server is already open

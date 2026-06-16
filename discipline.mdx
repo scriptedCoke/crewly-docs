@@ -1,0 +1,115 @@
+---
+title: "Discipline"
+description: "HR case management for strikes, suspensions, and terminations"
+---
+
+The Discipline plugin provides a structured HR case management system. Every strike, suspension, and termination is logged as a case with a unique case number, full history, and audit trail.
+
+## What Discipline adds
+
+- Strike, suspension, and termination case management
+- Auto-generated case numbers (e.g. `CASE-0042`)
+- Severity levels — Low, Medium, High
+- Case history per member
+- Revocation of strikes and suspensions
+- Automatic status changes on suspension and termination
+
+## Case types
+
+| Type | Effect |
+| --- | --- |
+| **Strike** | Logged on the member's record. No status change. |
+| **Suspension** | Member status set to Suspended. Optional end date for auto-expiry. |
+| **Termination** | Member status set to Terminated. Permanent. Cannot be revoked. |
+
+## Opening a case
+
+Members with the relevant discipline permission can open a case from:
+
+- The discipline page — click **Open Case**
+- A member's profile page — click **Issue Discipline**
+
+The case form collects:
+
+1. **Member** — who the case is against
+2. **Type** — Strike, Suspension, or Termination
+3. **Severity** — Low, Medium, or High
+4. **Reason** — what happened
+5. **Notes** — internal notes not shown to the member
+6. **End date** — for suspensions, when the suspension expires (optional)
+
+Once opened, the case is assigned a case number and an email is sent to the member.
+
+## Case numbers
+
+Case numbers are sequential per organisation — `CASE-0001`, `CASE-0002`, and so on. They never reset. Use case numbers when referencing a case in Discord or communications.
+
+## Strikes
+
+Strikes are permanent record entries. They show on the member's profile as **On Record**. A strike being on record means it happened and was logged. It can be revoked if issued in error.
+
+Strike decay can be configured — strikes older than a set number of days are considered inactive for eligibility checks in the Rank plugin.
+
+## Suspensions
+
+When a suspension is issued, the member's status immediately changes to **Suspended**. They cannot access Crewly until the suspension is lifted.
+
+Suspensions can have an end date. When that date passes, Crewly automatically restores the member to Active.
+
+Suspensions can also be manually revoked at any time by a member with the **Revoke cases** permission.
+
+## Terminations
+
+Terminations permanently remove a member's access. Their status is set to **Terminated** and cannot be changed. Terminations cannot be revoked — if a member needs to be reinstated, a new membership must be created.
+
+<Warning>
+  Termination is permanent. There is no undo. The member's data and case history are preserved, but their access is gone.
+</Warning>
+
+## Revoking a case
+
+Members with **Revoke cases** permission can revoke strikes and suspensions. Terminations cannot be revoked.
+
+When revoking:
+
+- The case is marked as Revoked
+- For suspensions: the member's status is restored to Active
+- An email is sent to the member
+- The action is logged in the audit log
+
+## Discipline page
+
+The Discipline page has two zones:
+
+**Left sidebar** — stats, a severity chart, and a live feed of recent cases
+
+**Right panel** — the full case table with filters for type, severity, status, and member search. Clicking a case opens an inline drawer with full details.
+
+## Case detail page
+
+Each case has its own detail page at `/discipline/[CASE-NUMBER]` showing:
+
+- Full case information
+- Member details and current status
+- A timeline of events — opened, reviewed, revoked
+- Internal notes
+- Quick actions for managers
+
+## Settings
+
+Go to **Settings → Plugins → Discipline** to configure:
+
+- **Strike decay** — days after which a strike is considered inactive
+- **Require reason minimum length** — minimum characters for the reason field
+- **Require notes on termination** — force internal notes when terminating
+- **Show case history to members** — whether members can see their own cases
+
+## Permissions required
+
+| Action | Permission needed |
+| --- | --- |
+| View cases | View cases |
+| Issue a strike | Issue strikes |
+| Issue a suspension | Issue suspensions |
+| Issue a termination | Issue terminations |
+| Revoke a case | Revoke cases |

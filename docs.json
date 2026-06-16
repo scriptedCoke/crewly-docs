@@ -56,6 +56,21 @@
           "ranks-and-permissions",
           "audit-log",
           "invite-codes"
+        ],
+        "expanded": true
+      },
+      {
+        "group": "Plugins",
+        "icon": "puzzle",
+        "expanded": true,
+        "pages": [
+          "overview",
+          "operations",
+          "attendance",
+          "quota",
+          "leave",
+          "discipline",
+          "rank"
         ]
       }
     ]
